@@ -5,5 +5,4 @@ WORKDIR /var/lib/ubuntu-chatlogs
 COPY . /usr/share/ubuntu-chatlogs
 
 
-CMD [ "logstash", "-f", "/usr/share/ubuntu-chatlogs/ubuntu-log-archive.conf", \
-      "-e", 'output { elasticsearch { hosts => [ "http://$ELASTICSEARCH_PORT_9200_TCP_ADDR:$ELASTICSEARCH_PORT_9200_TCP_PORT" ]; index => "logstash-chat-ubuntu" } }' ]
+CMD [ "-f", "/usr/share/ubuntu-chatlogs/ubuntu-log-archive.conf", "-e", "output { elasticsearch { hosts => [ 'http://$ELASTICSEARCH_PORT_9200_TCP_ADDR:$ELASTICSEARCH_PORT_9200_TCP_PORT' ]; index => 'logstash-chat-ubuntu' } }" ]
