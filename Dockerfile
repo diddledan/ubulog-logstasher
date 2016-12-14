@@ -1,4 +1,4 @@
-FROM logstash:alpine
+FROM logstash
 
 RUN mkdir -p /var/lib/ubuntu-chatlogs /usr/share/ubuntu-chatlogs
 WORKDIR /var/lib/ubuntu-chatlogs
