@@ -1,4 +1,4 @@
-FROM logstash
+FROM docker.elastic.co/logstash/logstash:6.0.0
 
 RUN mkdir -p /var/lib/ubuntu-chatlogs /usr/share/ubuntu-chatlogs
 WORKDIR /var/lib/ubuntu-chatlogs
