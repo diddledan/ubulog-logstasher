@@ -3,7 +3,7 @@ kind: Deployment
 metadata:
   name: "danik8s-3e8c"
 spec:
-  replicas: 2
+  replicas: 1
   selector:
     matchLabels:
       app: "danik8s-3e8c"
@@ -15,5 +15,10 @@ spec:
       containers:
         - name: "danik8s-3e8c"
           image: "ubuntuchatlog.azurecr.io/danik8s"
-          ports:
-          - containerPort: 80
+          volumeMounts:
+            - mountPath: "/var/lib/ubuntu-chatlogs"
+              name: chatlogs
+      volumes:
+        - name: chatlogs
+          persistentVolumeClaim:
+          claimName: ubuntu-chatlogs
