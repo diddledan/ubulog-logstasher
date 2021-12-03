@@ -1,19 +1,20 @@
 apiVersion : apps/v1
 kind: Deployment
 metadata:
-  name: "danik8s-3e8c"
+  name: "chatlog-logstash"
+  namespace: "ubuntu-chatlogs"
 spec:
   replicas: 1
   selector:
     matchLabels:
-      app: "danik8s-3e8c"
+      app: "chatlog-logstash"
   template:
     metadata:
       labels:
-        app: "danik8s-3e8c"
+        app: "chatlog-logstash"
     spec:
       containers:
-        - name: "danik8s-3e8c"
+        - name: "chatlog-logstash"
           image: "ubuntuchatlog.azurecr.io/danik8s"
           volumeMounts:
             - mountPath: "/var/lib/ubuntu-chatlogs"
