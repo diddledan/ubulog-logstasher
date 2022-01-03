@@ -16,6 +16,7 @@ spec:
       containers:
         - name: "chatlog-logstash"
           image: "diddledan/ubuntu-chatlog-logstash"
+          imagePullPolicy: Always
           volumeMounts:
             - mountPath: "/var/lib/ubuntu-chatlogs"
               name: chatlogs

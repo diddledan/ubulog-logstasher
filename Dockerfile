@@ -8,6 +8,8 @@ RUN mkdir -p /var/lib/ubuntu-chatlogs/spool \
 WORKDIR /var/lib/ubuntu-chatlogs
 
 COPY logstash.yml /usr/share/logstash/config
+COPY jvm.options /usr/share/logstash/config
+COPY index-template.json /usr/share/logstash/config
 COPY ubuntu-log-archive.conf /usr/share/logstash/pipeline
 
 USER logstash
